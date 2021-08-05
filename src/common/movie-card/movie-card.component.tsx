@@ -12,13 +12,19 @@ export const MovieCard = ({
 
   return (
     <div className={classes.root}>
-      <div className={classes.imgWrapper}>
+      <figure className={classes.imgWrapper}>
         <img
           className={classes.img}
-          src={`https://image.tmdb.org/t/p/w185${posterPath}`}
+          src={`https://image.tmdb.org/t/p/w300${posterPath}`}
           alt={title}
         />
-      </div>
+        <figcaption>
+          <span className="icon-star"></span>
+          <h4 className="rating">6.7 / 10</h4> <h4>Action</h4>
+          <h4>Adventure</h4>
+          <span className="button-green-download2-big">View Details</span>
+        </figcaption>
+      </figure>
       <Typography className={classes.title} variant="h4">
         {title}
       </Typography>

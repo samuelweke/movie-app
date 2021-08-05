@@ -5,9 +5,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useMovieCardStyles = makeStyles(theme => ({
-  root: {
-    width: '11.25rem',
-  },
+  root: {},
   title: {
     fontSize: '1rem',
   },
@@ -24,5 +22,7 @@ export const useMovieCardStyles = makeStyles(theme => ({
   img: {
     width: '100%',
     height: '100%',
+    border: '4px solid blue',
+    borderRadius: '10px',
   },
 }))

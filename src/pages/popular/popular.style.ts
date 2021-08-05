@@ -4,4 +4,8 @@
 
 import { makeStyles } from '@material-ui/core/styles'
 
-export const usePopularStyles = makeStyles(theme => ({}))
+export const usePopularStyles = makeStyles(theme => ({
+  pagination: {
+    marginTop: '2rem',
+  },
+}))

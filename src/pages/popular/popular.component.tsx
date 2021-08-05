@@ -9,6 +9,7 @@ import { axiosRequest } from '../../utility/request.utility'
 import { usePopularStyles } from './popular.style'
 
 export const Popular = () => {
+  const classes = usePopularStyles()
   const { data, error, status, run } = useAsync()
   const [page, setPage] = useState<number>(1)
   const movies: Movies = data?.data || {}
@@ -26,7 +27,7 @@ export const Popular = () => {
   const loading =
     (status === 'idle' || status === 'pending') &&
     [...new Array(20)].map((m, i) => (
-      <Grid key={i} item xs={6} sm={4} md={2} lg={2}>
+      <Grid key={i} item xs={6} sm={4} md={3} lg={3}>
         <MovieCardSkeleton />
       </Grid>
     ))
@@ -34,7 +35,7 @@ export const Popular = () => {
   const resolved = status === 'resolved' && (
     <>
       {movies.results.map(movie => (
-        <Grid key={movie.id} item xs={6} sm={4} md={2} lg={2}>
+        <Grid key={movie.id} item xs={6} sm={4} md={3} lg={3}>
           <MovieCard
             title={movie.title}
             posterPath={movie.poster_path}
@@ -42,24 +43,27 @@ export const Popular = () => {
           />
         </Grid>
       ))}
-
-      <Pagination
-        page={page}
-        count={movies.total_pages}
-        color="primary"
-        onChange={handlePaginationChange}
-      />
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Pagination
+          className={classes.pagination}
+          page={page}
+          count={movies.total_pages}
+          color="primary"
+          onChange={handlePaginationChange}
+        />
+      </Grid>
     </>
   )
 
   return (
-    <div>
-      <div style={{ margin: 10 }}>
-        <Grid container spacing={1}>
-          {loading}
-          {resolved}
-        </Grid>
-      </div>
-    </div>
+    <Grid style={{ margin: 10 }} container spacing={10}>
+      {loading}
+      {resolved}
+    </Grid>
   )
 }
