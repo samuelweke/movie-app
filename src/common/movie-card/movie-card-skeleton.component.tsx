@@ -1,3 +1,7 @@
+/**
+ * @author Samuel Weke
+ */
+
 import Skeleton from '@material-ui/lab/Skeleton'
 
 export const MovieCardSkeleton = () => {
