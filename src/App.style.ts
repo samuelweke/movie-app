@@ -11,10 +11,8 @@ export const useAppStyles = makeStyles(theme => ({
     flexDirection: 'column',
     width: '100%',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
+  container:{
+    paddingTop: '2rem',
+    paddingBottom: '5rem',
+  }
 }))

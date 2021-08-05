@@ -33,8 +33,9 @@ export const MovieCard = ({
               name="simple-controlled"
               value={5 / 2}
               precision={0.1}
+              disabled
             />
-            <Typography variant="h4" component="p">
+            <Typography className={classes.ratingText} variant="h4" component="p">
               7.8 / 10
             </Typography>
             {['Action', 'Adventure'].map(genre => (
@@ -42,7 +43,12 @@ export const MovieCard = ({
                 {genre}
               </Typography>
             ))}
-            <Button variant="contained" color="primary">
+
+            <Button
+              className={classes.viewDetailsBtn}
+              variant="contained"
+              color="primary"
+            >
               View Details
             </Button>
           </Grid>

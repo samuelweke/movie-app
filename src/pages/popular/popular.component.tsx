@@ -61,7 +61,7 @@ export const Popular = () => {
   )
 
   return (
-    <Grid style={{ margin: 10 }} container spacing={10}>
+    <Grid container spacing={10}>
       {loading}
       {resolved}
     </Grid>

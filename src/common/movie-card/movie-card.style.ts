@@ -14,17 +14,21 @@ export const useMovieCardStyles = makeStyles(theme => ({
   imgWrapper: {
     width: '100%',
     position: 'relative',
+    border: '5px solid blue',
+    borderRadius: '5px',
     '&:hover': {
       '& img': {
         opacity: 0.2,
+      },
+      '& figcaption': {
+        display: 'block',
       },
     },
   },
   img: {
     width: '100%',
     height: '100%',
-    border: '4px solid blue',
-    borderRadius: '10px',
+    display: 'block',
   },
   movieDetailsWrapper: {
     position: 'absolute',
@@ -33,6 +37,7 @@ export const useMovieCardStyles = makeStyles(theme => ({
     height: '100%',
     width: '100%',
     color: '#ffffff',
+    display: 'none',
   },
   movieDetails: {
     height: '100%',
@@ -41,5 +46,11 @@ export const useMovieCardStyles = makeStyles(theme => ({
     '& .MuiRating-iconEmpty': {
       color: '#fff',
     },
+  },
+  ratingText: {
+    paddingBottom: '1rem',
+  },
+  viewDetailsBtn: {
+    marginTop: '2rem',
   },
 }))
