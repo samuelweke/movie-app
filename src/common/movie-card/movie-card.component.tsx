@@ -30,16 +30,19 @@ export const MovieCard = ({
           >
             <Rating
               className={classes.rating}
-              name="simple-controlled"
-              value={5 / 2}
+              value={7.8 / 2}
               precision={0.1}
-              disabled
+              readOnly
             />
-            <Typography className={classes.ratingText} variant="h4" component="p">
+            <Typography
+              className={classes.ratingText}
+              variant="h5"
+              component="p"
+            >
               7.8 / 10
             </Typography>
             {['Action', 'Adventure'].map(genre => (
-              <Typography variant="h4" component="p">
+              <Typography variant="h5" component="p">
                 {genre}
               </Typography>
             ))}
@@ -54,12 +57,15 @@ export const MovieCard = ({
           </Grid>
         </figcaption>
       </figure>
-      <Typography className={classes.title} variant="h4">
-        {title}
-      </Typography>
-      <Typography className={classes.date} variant="subtitle1">
-        {date.substring(0, 4)}
-      </Typography>
+
+      <div className={classes.movieCardFooter}>
+        <Typography className={classes.title} variant="h4">
+          {title}
+        </Typography>
+        <Typography className={classes.date} variant="subtitle1">
+          {date.substring(0, 4)}
+        </Typography>
+      </div>
     </div>
   )
 }
